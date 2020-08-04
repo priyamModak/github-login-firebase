@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" [routerLink]="['/']">
+        <img src="../../../assets/img.png" width="30" height="30" alt="">
+        Priyam Github Finder
+    </a>
+
+    <div class="navbar-collapse">
+        <div class="navbar-nav ml-auto">
+            <div class="navbar-text float-left" *ngIf="email">{{email}}</div>
+            <a class="nav-item nav-link" [routerLink]="['/']">Home</a>
+            <a *ngIf="!email" routerLinkActive="active" class="nav-item nav-link" [routerLink]="['/signin']">Sign In</a>
+            <a *ngIf="!email" routerLinkActive="active" class="nav-item nav-link" [routerLink]="['/signup']">Sign Up</a>
+            <a *ngIf="email" class="nav-item nav-link" (click)="handleSignOut()">Logout</a>
+        </div>
+    </div>
+</nav>
